@@ -30,3 +30,14 @@ def delete(request, pk):
     board.delete()
     response = redirect('/boards/')
     return response
+    
+def edit(request, pk):
+    board = Board.objects.get(id=pk)
+    return render(request, 'boards/edit.html', {'board': board})
+    
+def update(request, pk):
+    board = Board.objects.get(id=pk)
+    board.title = request.POST.get('title')
+    board.content = request.POST.get('content')
+    board.save()
+    return redirect(f'/boards/detail/{board.id}')

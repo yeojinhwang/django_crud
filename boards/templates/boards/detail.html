@@ -7,4 +7,6 @@
 <p>{{ board.content }}</p>
 <a href="/boards">글 목록보러가기</a>
 <a href="/boards/delete/{{ board.pk }}">삭제하기</a>
+<a href="/boards/edit/{{ board.pk }}">수정하기</a>
+<a href="/boards/delete/{{ board.pk }}" onclick="return confirm('진짜 지울건가요..?')">[X]</a>
 {% endblock %}
