@@ -1,0 +1,9 @@
+{% extends 'jobs/base.html' %}
+{% block body %}
+<form action="/jobs/result/" method="POST">
+    {% csrf_token %}
+    <b>이름을 입력하세요.</b> <br>
+    <input type="text" name="name">
+    <input type="submit">
+</form>
+{% endblock %}
